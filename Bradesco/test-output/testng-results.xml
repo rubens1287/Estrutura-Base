@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="74602" started-at="2016-12-20T21:11:06Z" finished-at="2016-12-20T21:12:21Z">
+  <suite name="Default suite" duration-ms="81828" started-at="2016-12-20T21:38:03Z" finished-at="2016-12-20T21:39:25Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="74602" started-at="2016-12-20T21:11:06Z" finished-at="2016-12-20T21:12:21Z">
+    <test name="Default test" duration-ms="81828" started-at="2016-12-20T21:38:03Z" finished-at="2016-12-20T21:39:25Z">
       <class name="br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento">
-        <test-method status="FAIL" signature="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario()[pri:0, instance:br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento@3d299e3]" name="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario" duration-ms="74534" started-at="2016-12-20T19:11:06Z" finished-at="2016-12-20T19:12:21Z">
+        <test-method status="FAIL" signature="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario()[pri:0, instance:br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento@38082d64]" name="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario" duration-ms="81786" started-at="2016-12-20T19:38:03Z" finished-at="2016-12-20T19:39:25Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[null]]>
