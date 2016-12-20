@@ -13,8 +13,12 @@ public class PageAutoAtendimento implements ISeleniumUtils{
 
 	By inputBoxNumero = By.name("numero");
 	By btnEnviar = By.name("button");
-	By btnImprimirCarterinha = By.xpath("/html/body/div/form/div[2]/table/tbody/tr[2]/td[4]/input");								
+	By btnImprimirCarterinha = By.cssSelector("input[class='inputbotao']");								
 	By btnFechaJanelaImprimir = By.xpath("//*[@id='print-header']/div/button[2]");
+	By btnEnviarPorEmail = By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[3]/table[4]/tbody/tr[2]/td/center/button[2]");
+	//Janela dois
+	By btnEnviarEmail = By.xpath("/html/body/table[2]/tbody/tr[5]/td/table/tbody/tr/td[2]/form/input[3]");
+	By inputBoxEmail = By.name("email");
 	
 	Util utils = new Util();
 	
@@ -45,6 +49,19 @@ public class PageAutoAtendimento implements ISeleniumUtils{
 		driver.findElement(btnFechaJanelaImprimir).click();
 	}
 	
+	private void clickBtnEnviarPorEmail(){
+		driver.findElement(btnEnviarPorEmail).click();
+	}
+	
+	private void clickBtnEviarEmail(){
+		driver.findElement(btnEnviarEmail).sendKeys(Keys.ENTER);
+	}
+	
+	private void setInputBoxEmail(String value){
+		driver.findElement(inputBoxEmail).clear();
+		driver.findElement(inputBoxEmail).sendKeys(value);
+	}
+	
 	public void executeClickBotaoImprimirCarterinha(){
 		this.clickBtnImprimirCarterinha();
 		utils.AguardaAteaSuaPresencaBy(driver, 20, btnFechaJanelaImprimir);
@@ -55,6 +72,21 @@ public class PageAutoAtendimento implements ISeleniumUtils{
 	public void digitaCampoNumeroClicaBotaoEnviarConfirmaAlertJavaScript(String numero){
 		this.setInputBoxNumero(numero);
 		this.clickBtnEnviar();
+	}
+	
+	public void executeClickBtnEviarPorEmail(){
+		this.clickBtnEnviarPorEmail();
+	}
+	
+	public void executeEnvioDeEmailNaJanelaDois(String email){
+		try{
+			this.setInputBoxEmail(email);
+			Thread.sleep(1000);
+			this.clickBtnEviarEmail();
+		}catch(Exception e){
+			System.out.println("Erro ao rodar o metodo 'PageAutoAtendimento.executeEnvioDeEmailNaJanelaDois' : " + e);
+		}
+		
 	}
 	
 }

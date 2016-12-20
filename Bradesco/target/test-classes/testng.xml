@@ -9,7 +9,8 @@
          <class name="br.com.bradesco.test.SuiteTeste"></class>
         <!-- <class name="br.com.bradesco.test.CN001_2ViaDeCarterinha"></class> --> 
         <!-- <class name="br.com.bradesco.test.CN013_ExtratoDeAtendimentoAreaLogada"></class> -->
-        <class name="br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento"></class>
+        <!-- <class name="br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento"></class> -->
+        <class name="br.com.bradesco.test.CN006_ExtratoDePagamento"></class>
     </classes>
  </test>
 </suite>

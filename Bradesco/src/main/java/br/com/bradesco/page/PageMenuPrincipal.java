@@ -10,6 +10,7 @@ public class PageMenuPrincipal implements ISeleniumUtils {
 	By lnkCarterinha = By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[8]/td/a");	
 	By lnkSolicitarSegViaCarterinha = By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[3]/table[3]/tbody/tr[4]/td/b/i/a");
 	By lnkExtratoAtendimento = By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[10]/td/a");
+	By LnkExtratoDePagamento = By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[7]/td/a");
 		
 	Util utils = new Util();
 	
@@ -19,6 +20,10 @@ public class PageMenuPrincipal implements ISeleniumUtils {
 	
 	private void clickLnkSolicitaSegViaCarterinha() {
 		driver.findElement(lnkSolicitarSegViaCarterinha).click();
+	}
+	
+	private void clickLnkExtratoDePagamento(){
+		driver.findElement(LnkExtratoDePagamento).click();
 	}
 	
 	public void clickLnkExtratoAtendimento() {
@@ -33,6 +38,10 @@ public class PageMenuPrincipal implements ISeleniumUtils {
 		this.clickLnkCarterinha();
 		utils.AguardaAteaSuaPresencaBy(driver , 20, lnkSolicitarSegViaCarterinha);
 		this.clickLnkSolicitaSegViaCarterinha();
+	}
+	
+	public void executaSolicitacaoExtratoPagamento(){
+		this.clickLnkExtratoDePagamento();	
 	}
 	
 	

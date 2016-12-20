@@ -2,22 +2,22 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="suite" duration-ms="42416" started-at="2016-12-19T14:32:11Z" finished-at="2016-12-19T14:32:53Z">
+  <suite name="suite" duration-ms="201522" started-at="2016-12-20T20:26:39Z" finished-at="2016-12-20T20:30:00Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="42416" started-at="2016-12-19T14:32:11Z" finished-at="2016-12-19T14:32:53Z">
+    <test name="Test" duration-ms="201522" started-at="2016-12-20T20:26:39Z" finished-at="2016-12-20T20:30:00Z">
       <class name="br.com.bradesco.test.SuiteTeste">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:br.com.bradesco.test.SuiteTeste@2b4bac49]" name="setUp" is-config="true" duration-ms="46" started-at="2016-12-19T12:32:11Z" finished-at="2016-12-19T12:32:11Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:br.com.bradesco.test.SuiteTeste@574b560f]" name="setUp" is-config="true" duration-ms="120" started-at="2016-12-20T18:26:38Z" finished-at="2016-12-20T18:26:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="TearDow()[pri:0, instance:br.com.bradesco.test.SuiteTeste@2b4bac49]" name="TearDow" is-config="true" duration-ms="1576" started-at="2016-12-19T12:32:53Z" finished-at="2016-12-19T12:32:55Z">
+        <test-method status="PASS" signature="TearDow()[pri:0, instance:br.com.bradesco.test.SuiteTeste@574b560f]" name="TearDow" is-config="true" duration-ms="2372" started-at="2016-12-20T18:30:00Z" finished-at="2016-12-20T18:30:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TearDow -->
       </class> <!-- br.com.bradesco.test.SuiteTeste -->
-      <class name="br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento">
-        <test-method status="FAIL" signature="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario()[pri:0, instance:br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento@175b9425]" name="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario" duration-ms="42400" started-at="2016-12-19T12:32:11Z" finished-at="2016-12-19T12:32:53Z">
+      <class name="br.com.bradesco.test.CN006_ExtratoDePagamento">
+        <test-method status="FAIL" signature="CT002_SolicitarExtratoPagamentoViaEmail()[pri:0, instance:br.com.bradesco.test.CN006_ExtratoDePagamento@7748410a]" name="CT002_SolicitarExtratoPagamentoViaEmail" duration-ms="201482" started-at="2016-12-20T18:26:39Z" finished-at="2016-12-20T18:30:00Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[null]]>
@@ -26,7 +26,7 @@
               <![CDATA[java.lang.AssertionError: null
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.fail(Assert.java:101)
-	at br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento.CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario(CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento.java:71)
+	at br.com.bradesco.test.CN006_ExtratoDePagamento.CT002_SolicitarExtratoPagamentoViaEmail(CN006_ExtratoDePagamento.java:185)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -62,8 +62,8 @@
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario -->
-      </class> <!-- br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento -->
+        </test-method> <!-- CT002_SolicitarExtratoPagamentoViaEmail -->
+      </class> <!-- br.com.bradesco.test.CN006_ExtratoDePagamento -->
     </test> <!-- Test -->
   </suite> <!-- suite -->
 </testng-results>

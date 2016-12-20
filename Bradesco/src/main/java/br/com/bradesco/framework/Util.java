@@ -43,6 +43,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
@@ -352,7 +354,7 @@ public class Util {
  		
  		try{
  			TakesScreenshot ts=(TakesScreenshot)driver;
- 			this.AguardaPoupAlertClicaOK(driver, 20, true);
+ 			this.AguardaPoupAlertClicaOK(driver, 5, true);
  			File source=ts.getScreenshotAs(OutputType.FILE);
  			
  			
@@ -395,7 +397,6 @@ public class Util {
  	}
 	
 	public void Evidencia(Document document, CabecalhoEvidencia oCabecalho , WebDriver newDriver, int numStep, String StatusStep){
-		
 		
 		try {
 		
@@ -510,9 +511,22 @@ public class Util {
 				}
 			}
 		}catch(Exception e){
-			System.out.println("Erro ao rodar o metodo 'AguardaPoupAlertClicaOK' : " + e);
+			
 		}
 		
+	}
+	
+	public void alteraJanelaWindows(WebDriver newDriver, String AtualWindowId){
+		//logica para selecionar a janela 2 aberta no processo do navegador
+  		Set<String> windons = newDriver.getWindowHandles();	
+  		Iterator iterator = windons.iterator();
+  		while(iterator.hasNext()){
+  			String widowsId = iterator.next().toString();
+  			
+  			if(!widowsId.equals(AtualWindowId)){
+  				newDriver.switchTo().window(widowsId);
+  			}
+  		}
 	}
 	
 }
