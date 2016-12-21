@@ -22,11 +22,6 @@
           <include name="CT002_SolicitarExtratoPagamentoViaEmail"/>
         </methods>
       </class> <!-- br.com.bradesco.test.CN006_ExtratoDePagamento -->
-      <class name="br.com.bradesco.test.CN013_ExtratoDeAtendimentoAreaLogada">
-        <methods>
-          <include name="CT001_ExecutarConsultaDeProtocolo"/>
-        </methods>
-      </class> <!-- br.com.bradesco.test.CN013_ExtratoDeAtendimentoAreaLogada -->
       <class name="br.com.bradesco.test.SuiteTeste">
         <methods>
           <include name="setUp"/>

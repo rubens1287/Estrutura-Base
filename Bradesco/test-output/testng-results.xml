@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="81828" started-at="2016-12-20T21:38:03Z" finished-at="2016-12-20T21:39:25Z">
+  <suite name="Default suite" duration-ms="237296" started-at="2016-12-21T14:09:31Z" finished-at="2016-12-21T14:13:28Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="81828" started-at="2016-12-20T21:38:03Z" finished-at="2016-12-20T21:39:25Z">
-      <class name="br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento">
-        <test-method status="FAIL" signature="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario()[pri:0, instance:br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento@38082d64]" name="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario" duration-ms="81786" started-at="2016-12-20T19:38:03Z" finished-at="2016-12-20T19:39:25Z">
+    <test name="Default test" duration-ms="237296" started-at="2016-12-21T14:09:31Z" finished-at="2016-12-21T14:13:28Z">
+      <class name="br.com.bradesco.test.CN006_ExtratoDePagamento">
+        <test-method status="FAIL" signature="CT002_SolicitarExtratoPagamentoViaEmail()[pri:0, instance:br.com.bradesco.test.CN006_ExtratoDePagamento@38082d64]" name="CT002_SolicitarExtratoPagamentoViaEmail" duration-ms="237273" started-at="2016-12-21T12:09:31Z" finished-at="2016-12-21T12:13:28Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[null]]>
@@ -16,7 +16,7 @@
               <![CDATA[java.lang.AssertionError: null
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.fail(Assert.java:101)
-	at br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento.CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario(CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento.java:150)
+	at br.com.bradesco.test.CN006_ExtratoDePagamento.CT002_SolicitarExtratoPagamentoViaEmail(CN006_ExtratoDePagamento.java:181)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -46,8 +46,8 @@
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario -->
-      </class> <!-- br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento -->
+        </test-method> <!-- CT002_SolicitarExtratoPagamentoViaEmail -->
+      </class> <!-- br.com.bradesco.test.CN006_ExtratoDePagamento -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

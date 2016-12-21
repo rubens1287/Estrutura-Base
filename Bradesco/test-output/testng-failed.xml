@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento">
+      <class name="br.com.bradesco.test.CN006_ExtratoDePagamento">
         <methods>
-          <include name="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario"/>
+          <include name="CT002_SolicitarExtratoPagamentoViaEmail"/>
         </methods>
-      </class> <!-- br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento -->
+      </class> <!-- br.com.bradesco.test.CN006_ExtratoDePagamento -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

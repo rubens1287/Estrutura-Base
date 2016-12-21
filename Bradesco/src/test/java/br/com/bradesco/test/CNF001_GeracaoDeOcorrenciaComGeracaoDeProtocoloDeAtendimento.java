@@ -30,6 +30,7 @@ public class CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento extend
 	CabecalhoEvidencia cabecalho = new CabecalhoEvidencia();
 	PageMenuPrincipal pageMenuPrincipal = new PageMenuPrincipal();
 	PageAutoAtendimento pageAutoAtendimento = new PageAutoAtendimento();
+	String numeroProtocolo1 = null;
 	
 	//---------------------------INICIALIZAÇÃO DO CABEÇARIO DA EVIDENCIA--------------------------------
 	//Monta cabeçalho do teste
@@ -60,18 +61,22 @@ public class CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento extend
 		 * 
 		 * #SCRIPT
 		 */
-				
-		driver.get(dados[0]);
-  		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-  		  			
-  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("login"))==true){
-  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
-  		}else{
-  			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+		try{
+			driver.get(dados[0]);
+	  		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	  		  			
+	  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("login"))){
+	  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
+	  		}else{
+	  			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+	  			Assert.fail();
+	  		}
+		}catch(Exception e){
+			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+			System.out.println("Exception: " + e);
   			Assert.fail();
-  		}
-  		numStep++;
-  				
+		}
+  		numStep++;		
   		/* Step 2
 		 * 
 		 * #AÇÃO: 
@@ -90,15 +95,21 @@ public class CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento extend
 		 * 
 		 * #SCRIPT
 		 */
-  		
-  		this.ExecutaLogin(dados[1],dados[2]);
-  		  				
-  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("logout"))==true){
-  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
-  		}else{
+  		try{
+  			this.ExecutaLogin(dados[1],dados[2]);
+  	  		
+  	  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("logout"))){
+  	  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
+  	  		}else{
+  	  			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+  	  			Assert.fail();
+  	  		}
+  		}catch(Exception e){
   			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+			System.out.println("Exception: " + e);
   			Assert.fail();
   		}
+  		
   		numStep++;
   		
   		/* Step 3
@@ -115,18 +126,21 @@ public class CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento extend
 		 * 
 		 * #SCRIPT
 		 */
-  		
-  		pageMenuPrincipal.executaSolicitacaoSegViaCarterinha();
-  		
-  		//Valida se o campo foi apresentado - 'Associado*:'
-  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("dependente"))){
-  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
-  		}else{
+  		try{
+  			pageMenuPrincipal.executaSolicitacaoSegViaCarterinha();
+  	  		//Valida se o campo foi apresentado - 'Associado*:'
+  	  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("dependente"))){
+  	  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
+  	  		}else{
+  	  			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+  	  			Assert.fail();
+  	  		}
+  		}catch(Exception e){
   			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+			System.out.println("Exception: " + e);
   			Assert.fail();
   		}
-  		numStep++;
-  		  		
+  		numStep++;		
   		/* Step 4 e Step 5
 		 * 
 		 * #AÇÃO: 
@@ -140,18 +154,22 @@ public class CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento extend
 		 * 
 		 * #SCRIPT
 		 */
-  		
-  		pageAutoAtendimento.digitaCampoNumeroClicaBotaoEnviarConfirmaAlertJavaScript("10");
-  		
-  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.id("idNrProtocolo"))==true){
-  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
-  		}else{
+  		try{
+  			pageAutoAtendimento.digitaCampoNumeroClicaBotaoEnviarConfirmaAlertJavaScript("10");
+  	  		
+  	  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.id("idNrProtocolo"))){
+  	  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
+  	  		}else{
+  	  			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+  	  			Assert.fail();
+  	  		}
+  	  		numeroProtocolo1 =  new String(driver.findElement(By.id("idNrProtocolo")).getText());
+  		}catch(Exception e){
   			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+			System.out.println("Exception: " + e);
   			Assert.fail();
   		}
   		numStep++;
-  		String numeroProtocolo1 =  new String(driver.findElement(By.id("idNrProtocolo")).getText());
-  		
   		/* Step 6
 		 * 
 		 * #AÇÃO: 
@@ -166,19 +184,22 @@ public class CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento extend
 		 * 
 		 * #SCRIPT
 		 */
-  		
-  		pageMenuPrincipal.executaClickLnkCarterinha();
- 
-  		//Valida se o campo foi apresentado - 'Associado*:'
-  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[3]/table[3]/tbody/tr[4]/td/b/i/a"))){
-  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
-  		}else{
+  		try{
+  			pageMenuPrincipal.executaClickLnkCarterinha();
+  			 
+  	  		//Valida se o campo foi apresentado - 'Associado*:'
+  	  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[3]/table[3]/tbody/tr[4]/td/b/i/a"))){
+  	  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
+  	  		}else{
+  	  			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+  	  			Assert.fail();
+  	  		}
+  		}catch(Exception e){
   			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+			System.out.println("Exception: " + e);
   			Assert.fail();
   		}
   		numStep++;
-  		
-  		
   		/* Step 7
 		 * 
 		 * #AÇÃO: 
@@ -193,16 +214,21 @@ public class CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento extend
 		 *
 		 * #SCRIPT
 		 */
-  		
-  		pageAutoAtendimento.executeClickBotaoImprimirCarterinha();
-  		
-  		String numeroProtocolo2 = new String(driver.findElement(By.id("idNrProtocolo")).getText());	
-  		
-  		//Valida se o campo foi apresentado - 'Associado*:'
-  		if(numeroProtocolo1.substring(11).equals(numeroProtocolo2.substring(11))){
-  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
-  		}else{
+  		try{
+  			pageAutoAtendimento.executeClickBotaoImprimirCarterinha();
+  	  		
+  	  		String numeroProtocolo2 = new String(driver.findElement(By.id("idNrProtocolo")).getText());	
+  	  		
+  	  		//Valida se o campo foi apresentado - 'Associado*:'
+  	  		if(numeroProtocolo1.substring(11).equals(numeroProtocolo2.substring(11))){
+  	  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
+  	  		}else{
+  	  			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+  	  			Assert.fail();
+  	  		}
+  		}catch(Exception e){
   			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+			System.out.println("Exception: " + e);
   			Assert.fail();
   		}
   		numStep++;

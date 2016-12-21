@@ -4,9 +4,9 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="54,023">
+           time="63,358">
   <properties />
-            <testcase name="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario" time="54,023" classname="br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento">
+            <testcase name="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario" time="63,358" classname="br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento">
                 <failure type="java.lang.AssertionError"
                   message="null"
               >

@@ -4,9 +4,9 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="67,434">
+           time="67,221">
   <properties />
-            <testcase name="CT002_SolicitarExtratoPagamentoViaEmail" time="67,434" classname="br.com.bradesco.test.CN006_ExtratoDePagamento">
+            <testcase name="CT002_SolicitarExtratoPagamentoViaEmail" time="67,221" classname="br.com.bradesco.test.CN006_ExtratoDePagamento">
                 <failure type="java.lang.AssertionError"
                   message="null"
               >

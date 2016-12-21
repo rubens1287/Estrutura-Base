@@ -60,17 +60,21 @@ public class CN006_ExtratoDePagamento extends PageLogin implements ISeleniumUtil
 		 * 
 		 * #SCRIPT
 		 */
-				
-		driver.get(dados[0]);
 		
-		driver.manage().timeouts().setScriptTimeout(30 , TimeUnit.SECONDS);
-  		  			
-  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("login"))==true){
-  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
-  		}else{
-  			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+		try{
+			driver.get(dados[0]);
+			driver.manage().timeouts().setScriptTimeout(30 , TimeUnit.SECONDS);
+			if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("login"))){
+				utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
+			}else{
+				utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+				Assert.fail();
+			}
+		}catch(Exception e){
+			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+			System.out.println("Exception :" + e);
   			Assert.fail();
-  		}
+		}
   		numStep++;
   				
   		/* Step 2
@@ -92,12 +96,17 @@ public class CN006_ExtratoDePagamento extends PageLogin implements ISeleniumUtil
 		 * #SCRIPT
 		 */
   		
-  		this.ExecutaLogin(dados[1],dados[2]);
-  		  				
-  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("logout"))==true){
-  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
-  		}else{
+  		try{
+  			this.ExecutaLogin(dados[1],dados[2]);
+  			if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("logout"))){
+				utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
+			}else{
+				utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+				Assert.fail();
+			}
+  		}catch(Exception e){
   			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+  			System.out.println("Exception :" + e);
   			Assert.fail();
   		}
   		numStep++;
@@ -117,13 +126,17 @@ public class CN006_ExtratoDePagamento extends PageLogin implements ISeleniumUtil
 		 * #SCRIPT
 		 */
   		
-  		pageMenuPrincipal.executaSolicitacaoExtratoPagamento();
-  		
-  		//Valida se o campo foi apresentado - 'Associado*:'
-  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[3]/table[4]/tbody/tr[2]/td/center/button[2]"))){
-  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
-  		}else{
+  		try{
+  			pageMenuPrincipal.executaSolicitacaoExtratoPagamento();
+  			if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[3]/table[4]/tbody/tr[2]/td/center/button[2]"))){
+				utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
+			}else{
+				utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+				Assert.fail();
+			}
+  		}catch(Exception e){
   			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+  			System.out.println("Exception :" + e);
   			Assert.fail();
   		}
   		numStep++;
@@ -142,19 +155,23 @@ public class CN006_ExtratoDePagamento extends PageLogin implements ISeleniumUtil
 		 * #SCRIPT
 		 */
   		
-  		// janela atual do navegador
-  		String atualWindowId = driver.getWindowHandle();
-  		pageAutoAtendimento.executeClickBtnEviarPorEmail();
-  		utils.alteraJanelaWindows(driver, atualWindowId);
-  		
-  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("email"))==true){
-  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
-  		}else{
+  		try{
+  			// janela atual do navegador
+  	  		String atualWindowId = driver.getWindowHandle();
+  	  		pageAutoAtendimento.executeClickBtnEviarPorEmail();
+  	  		utils.alteraJanelaWindows(driver, atualWindowId); 		
+	  	  	if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("email"))){
+				utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
+			}else{
+				utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+				Assert.fail();
+			}
+  		}catch(Exception e){
   			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+  			System.out.println("Exception :" + e);
   			Assert.fail();
   		}
   		numStep++;
-
   		
   		/* Step 5
 		 * 
@@ -169,21 +186,23 @@ public class CN006_ExtratoDePagamento extends PageLogin implements ISeleniumUtil
 		 *  	Será apresentado o numero do protocolo de atendimento abaixo do nome do usuário da aplicação.
 		 * 
 		 * #SCRIPT
-		 */
-  		
-  		pageAutoAtendimento.executeEnvioDeEmailNaJanelaDois(dados[3]);
-  		
-  		  		
-  		//Valida se o campo foi apresentado - a mesagem de sucesso  
-  		
-  		WebElement element = driver.findElement(By.xpath("/html/body/table/tbody/tr[5]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td"));
-  		
-  		if(utils.AguardaTextWebElement(driver, "Email Enviado com sucesso!", 30, element)){
-  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
-  		}else{
+		 */  		
+  		try{
+  			pageAutoAtendimento.executeEnvioDeEmailNaJanelaDois(dados[3]);
+  			
+  			if(utils.AguardaTextWebElement(driver, "Email Enviado com sucesso!", 30, driver.findElement(By.xpath("/html/body/table/tbody/tr[5]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td")))){
+				utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
+			}else{
+				utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+				Assert.fail();
+			}
+  			
+  			//falta  validar a apresentação doo protocolo
+  		}catch(Exception e){
   			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+  			System.out.println("Exception :" + e);
   			Assert.fail();
-  		}
+  		};
   		numStep++;
   		  		
 	}catch(Exception e){

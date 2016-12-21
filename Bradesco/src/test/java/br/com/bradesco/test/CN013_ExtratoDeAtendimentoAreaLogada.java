@@ -61,18 +61,22 @@ public class CN013_ExtratoDeAtendimentoAreaLogada extends PageLogin implements I
 		 * 
 		 * #SCRIPT
 		 */
-				
-		driver.get(dados[0]);
-  		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-  		  			
-  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("login"))==true){
-  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
-  		}else{
-  			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+		try{
+			driver.get(dados[0]);
+	  		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	  		  			
+	  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("login"))){
+	  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
+	  		}else{
+	  			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+	  			Assert.fail();
+	  		}
+		}catch(Exception e){
+			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+			System.out.println("Exception: " + e);
   			Assert.fail();
-  		}
-  		numStep++;
-  				
+		}
+  		numStep++;	
   		/* Step 2
 		 * 
 		 * #AÇÃO: 
@@ -91,17 +95,21 @@ public class CN013_ExtratoDeAtendimentoAreaLogada extends PageLogin implements I
 		 * 
 		 * #SCRIPT
 		 */
-  		
-  		this.ExecutaLogin(dados[1],dados[2]);
-  		  				
-  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("logout"))==true){
-  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
-  		}else{
+  		try{
+  			this.ExecutaLogin(dados[1],dados[2]);
+				
+  	  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("logout"))){
+  	  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
+  	  		}else{
+  	  			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+  	  			Assert.fail();
+  	  		}
+  		}catch(Exception e){
   			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+			System.out.println("Exception: " + e);
   			Assert.fail();
   		}
   		numStep++;
-  		
   		/* Step 3
 		 * 
 		 * #AÇÃO: 
@@ -120,18 +128,22 @@ public class CN013_ExtratoDeAtendimentoAreaLogada extends PageLogin implements I
 		 * 
 		 * #SCRIPT
 		 */
-  		
-  		pageMenuPrincipal.clickLnkExtratoAtendimento();
-  		
-  		//Valida se o campo foi apresentado - 'Associado*:'
-  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.id("buscar"))){
-  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
-  		}else{
+  		try{
+  			pageMenuPrincipal.clickLnkExtratoAtendimento();
+  	  		
+  	  		//Valida se o campo foi apresentado - 'Associado*:'
+  	  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.id("buscar"))){
+  	  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
+  	  		}else{
+  	  			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+  	  			Assert.fail();
+  	  		}
+  		}catch(Exception e){
   			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+			System.out.println("Exception: " + e);
   			Assert.fail();
   		}
   		numStep++;
-  		  		
   		/* Step 4
 		 * 
 		 * #AÇÃO: 
@@ -152,16 +164,21 @@ public class CN013_ExtratoDeAtendimentoAreaLogada extends PageLogin implements I
 	 	 *
 		 * #SCRIPT
 		 */
-  		
-  		pageCanaisDeAtendimento.ExecutaBuscaExtratoDeAtendimento(dados[3],dados[4]);  		
-  		  		
-  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.xpath("//*[@id='idTabelaContent']/tbody/tr[1]/td[1]"))==true){
-  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
-  		}else{
-  			
+  		try{
+  			pageCanaisDeAtendimento.ExecutaBuscaExtratoDeAtendimento(dados[3],dados[4]);  		
+		  		
+  	  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.xpath("//*[@id='idTabelaContent']/tbody/tr[1]/td[1]"))){
+  	  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
+  	  		}else{
+  	  			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+  	  			Assert.fail();
+  	  		}
+  		}catch(Exception e){
   			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+			System.out.println("Exception: " + e);
   			Assert.fail();
   		}
+  		
   		
   		
 	}catch(Exception e){
