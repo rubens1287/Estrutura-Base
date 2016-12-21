@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="3" total="4" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="suite" duration-ms="261375" started-at="2016-12-21T13:17:31Z" finished-at="2016-12-21T13:21:52Z">
+  <suite name="suite" duration-ms="237833" started-at="2016-12-21T16:16:43Z" finished-at="2016-12-21T16:20:41Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="261375" started-at="2016-12-21T13:17:31Z" finished-at="2016-12-21T13:21:52Z">
+    <test name="Test" duration-ms="237833" started-at="2016-12-21T16:16:43Z" finished-at="2016-12-21T16:20:41Z">
       <class name="br.com.bradesco.test.CN001_2ViaDeCarterinha">
-        <test-method status="FAIL" signature="CT001_ExecutarSolicitacao2viaDeCarterinha()[pri:0, instance:br.com.bradesco.test.CN001_2ViaDeCarterinha@11c9af63]" name="CT001_ExecutarSolicitacao2viaDeCarterinha" duration-ms="81118" started-at="2016-12-21T11:17:31Z" finished-at="2016-12-21T11:18:52Z">
+        <test-method status="FAIL" signature="CT001_ExecutarSolicitacao2viaDeCarterinha()[pri:0, instance:br.com.bradesco.test.CN001_2ViaDeCarterinha@11c9af63]" name="CT001_ExecutarSolicitacao2viaDeCarterinha" duration-ms="68132" started-at="2016-12-21T14:16:43Z" finished-at="2016-12-21T14:17:51Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[null]]>
@@ -16,7 +16,7 @@
               <![CDATA[java.lang.AssertionError: null
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.fail(Assert.java:101)
-	at br.com.bradesco.test.CN001_2ViaDeCarterinha.CT001_ExecutarSolicitacao2viaDeCarterinha(CN001_2ViaDeCarterinha.java:154)
+	at br.com.bradesco.test.CN001_2ViaDeCarterinha.CT001_ExecutarSolicitacao2viaDeCarterinha(CN001_2ViaDeCarterinha.java:165)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -55,17 +55,17 @@
         </test-method> <!-- CT001_ExecutarSolicitacao2viaDeCarterinha -->
       </class> <!-- br.com.bradesco.test.CN001_2ViaDeCarterinha -->
       <class name="br.com.bradesco.test.SuiteTeste">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:br.com.bradesco.test.SuiteTeste@157853da]" name="setUp" is-config="true" duration-ms="612" started-at="2016-12-21T11:17:30Z" finished-at="2016-12-21T11:17:31Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:br.com.bradesco.test.SuiteTeste@157853da]" name="setUp" is-config="true" duration-ms="704" started-at="2016-12-21T14:16:42Z" finished-at="2016-12-21T14:16:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="TearDow()[pri:0, instance:br.com.bradesco.test.SuiteTeste@157853da]" name="TearDow" is-config="true" duration-ms="3483" started-at="2016-12-21T11:21:52Z" finished-at="2016-12-21T11:21:56Z">
+        <test-method status="PASS" signature="TearDow()[pri:0, instance:br.com.bradesco.test.SuiteTeste@157853da]" name="TearDow" is-config="true" duration-ms="2743" started-at="2016-12-21T14:20:41Z" finished-at="2016-12-21T14:20:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TearDow -->
       </class> <!-- br.com.bradesco.test.SuiteTeste -->
       <class name="br.com.bradesco.test.CN006_ExtratoDePagamento">
-        <test-method status="FAIL" signature="CT002_SolicitarExtratoPagamentoViaEmail()[pri:0, instance:br.com.bradesco.test.CN006_ExtratoDePagamento@757acd7b]" name="CT002_SolicitarExtratoPagamentoViaEmail" duration-ms="67221" started-at="2016-12-21T11:20:45Z" finished-at="2016-12-21T11:21:52Z">
+        <test-method status="FAIL" signature="CT002_SolicitarExtratoPagamentoViaEmail()[pri:0, instance:br.com.bradesco.test.CN006_ExtratoDePagamento@757acd7b]" name="CT002_SolicitarExtratoPagamentoViaEmail" duration-ms="71548" started-at="2016-12-21T14:19:29Z" finished-at="2016-12-21T14:20:41Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[null]]>
@@ -74,7 +74,7 @@
               <![CDATA[java.lang.AssertionError: null
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.fail(Assert.java:101)
-	at br.com.bradesco.test.CN006_ExtratoDePagamento.CT002_SolicitarExtratoPagamentoViaEmail(CN006_ExtratoDePagamento.java:193)
+	at br.com.bradesco.test.CN006_ExtratoDePagamento.CT002_SolicitarExtratoPagamentoViaEmail(CN006_ExtratoDePagamento.java:204)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -113,13 +113,13 @@
         </test-method> <!-- CT002_SolicitarExtratoPagamentoViaEmail -->
       </class> <!-- br.com.bradesco.test.CN006_ExtratoDePagamento -->
       <class name="br.com.bradesco.test.CN013_ExtratoDeAtendimentoAreaLogada">
-        <test-method status="PASS" signature="CT001_ExecutarConsultaDeProtocolo()[pri:0, instance:br.com.bradesco.test.CN013_ExtratoDeAtendimentoAreaLogada@71c3b41]" name="CT001_ExecutarConsultaDeProtocolo" duration-ms="49634" started-at="2016-12-21T11:18:52Z" finished-at="2016-12-21T11:19:42Z">
+        <test-method status="PASS" signature="CT001_ExecutarConsultaDeProtocolo()[pri:0, instance:br.com.bradesco.test.CN013_ExtratoDeAtendimentoAreaLogada@71c3b41]" name="CT001_ExecutarConsultaDeProtocolo" duration-ms="41562" started-at="2016-12-21T14:17:51Z" finished-at="2016-12-21T14:18:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CT001_ExecutarConsultaDeProtocolo -->
       </class> <!-- br.com.bradesco.test.CN013_ExtratoDeAtendimentoAreaLogada -->
       <class name="br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento">
-        <test-method status="FAIL" signature="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario()[pri:0, instance:br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento@55740540]" name="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario" duration-ms="63358" started-at="2016-12-21T11:19:42Z" finished-at="2016-12-21T11:20:45Z">
+        <test-method status="FAIL" signature="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario()[pri:0, instance:br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento@55740540]" name="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario" duration-ms="56523" started-at="2016-12-21T14:18:33Z" finished-at="2016-12-21T14:19:29Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[null]]>
@@ -128,7 +128,7 @@
               <![CDATA[java.lang.AssertionError: null
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.fail(Assert.java:101)
-	at br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento.CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario(CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento.java:150)
+	at br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento.CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario(CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento.java:164)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="br.com.bradesco.test.CN006_ExtratoDePagamento">
+      <class name="br.com.bradesco.test.CN012_AlterarLinksDuvidasAreaLogada">
         <methods>
-          <include name="CT002_SolicitarExtratoPagamentoViaEmail"/>
+          <include name="CN012_AlterarLinksDuvidasAreaLogada"/>
+          <include name="CT022_ValidarAlteraçãoLinkDuvidasSobreAlteraçãoEmail"/>
         </methods>
-      </class> <!-- br.com.bradesco.test.CN006_ExtratoDePagamento -->
+      </class> <!-- br.com.bradesco.test.CN012_AlterarLinksDuvidasAreaLogada -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

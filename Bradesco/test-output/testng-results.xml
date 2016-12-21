@@ -1,53 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="237296" started-at="2016-12-21T14:09:31Z" finished-at="2016-12-21T14:13:28Z">
+  <suite name="Default suite" duration-ms="97623" started-at="2016-12-21T20:37:27Z" finished-at="2016-12-21T20:39:05Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="237296" started-at="2016-12-21T14:09:31Z" finished-at="2016-12-21T14:13:28Z">
-      <class name="br.com.bradesco.test.CN006_ExtratoDePagamento">
-        <test-method status="FAIL" signature="CT002_SolicitarExtratoPagamentoViaEmail()[pri:0, instance:br.com.bradesco.test.CN006_ExtratoDePagamento@38082d64]" name="CT002_SolicitarExtratoPagamentoViaEmail" duration-ms="237273" started-at="2016-12-21T12:09:31Z" finished-at="2016-12-21T12:13:28Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: null
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.fail(Assert.java:101)
-	at br.com.bradesco.test.CN006_ExtratoDePagamento.CT002_SolicitarExtratoPagamentoViaEmail(CN006_ExtratoDePagamento.java:181)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:659)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:845)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1153)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:771)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1199)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1124)
-	at org.testng.TestNG.run(TestNG.java:1032)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+    <test name="Default test" duration-ms="97623" started-at="2016-12-21T20:37:27Z" finished-at="2016-12-21T20:39:05Z">
+      <class name="br.com.bradesco.test.CN012_AlterarLinksDuvidasAreaLogada">
+        <test-method status="PASS" signature="CN012_AlterarLinksDuvidasAreaLogada()[pri:0, instance:br.com.bradesco.test.CN012_AlterarLinksDuvidasAreaLogada@38082d64]" name="CN012_AlterarLinksDuvidasAreaLogada" duration-ms="52972" started-at="2016-12-21T18:37:27Z" finished-at="2016-12-21T18:38:20Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CT002_SolicitarExtratoPagamentoViaEmail -->
-      </class> <!-- br.com.bradesco.test.CN006_ExtratoDePagamento -->
+        </test-method> <!-- CN012_AlterarLinksDuvidasAreaLogada -->
+        <test-method status="PASS" signature="CT022_ValidarAlteraçãoLinkDuvidasSobreAlteraçãoEmail()[pri:0, instance:br.com.bradesco.test.CN012_AlterarLinksDuvidasAreaLogada@38082d64]" name="CT022_ValidarAlteraçãoLinkDuvidasSobreAlteraçãoEmail" duration-ms="44643" started-at="2016-12-21T18:38:20Z" finished-at="2016-12-21T18:39:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CT022_ValidarAlteraçãoLinkDuvidasSobreAlteraçãoEmail -->
+      </class> <!-- br.com.bradesco.test.CN012_AlterarLinksDuvidasAreaLogada -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package br.com.bradesco.test;
 
 import java.util.concurrent.TimeUnit;
@@ -12,20 +9,17 @@ import org.testng.annotations.Test;
 import br.com.bradesco.framework.CabecalhoEvidencia;
 import br.com.bradesco.framework.Util;
 import br.com.bradesco.interfaces.ISeleniumUtils;
-import br.com.bradesco.page.PageAutoAtendimento;
+import br.com.bradesco.page.PageCanaisDeAtendimento;
+import br.com.bradesco.page.PageFaleConosco;
 import br.com.bradesco.page.PageLogin;
 import br.com.bradesco.page.PageMenuPrincipal;
 
 import com.itextpdf.text.Document;
 
-/**
- * @author Rubens Lobo
- *
- */
-public class CN001_2ViaDeCarterinha extends PageLogin implements ISeleniumUtils {
+public class CN011_AreaLogadoFaleConosco extends PageLogin implements ISeleniumUtils {
 	
 	@Test(priority = 1)
-	public void CT001_ExecutarSolicitacao2viaDeCarterinha() {
+	public void CT002_EnviarFormulario_FaleConosco() {
 	
 	//-----------------------------------------SETUP----------------------------------------------------
 	//Estacia objetos
@@ -33,24 +27,23 @@ public class CN001_2ViaDeCarterinha extends PageLogin implements ISeleniumUtils 
 	Document document = new Document();
 	CabecalhoEvidencia cabecalho = new CabecalhoEvidencia();
 	PageMenuPrincipal pageMenuPrincipal = new PageMenuPrincipal();
-	PageAutoAtendimento pageAutoAtendimento = new PageAutoAtendimento();
-	
+	PageFaleConosco pagefaleconosco = new PageFaleConosco();
 	
 	//---------------------------INICIALIZAÇÃO DO CABEÇARIO DA EVIDENCIA--------------------------------
 	//Monta cabeçalho do teste
-	cabecalho.setNomeCasoTeste("CT001 - Executar solicitação de 2 via de carterinha");
-	cabecalho.setNomeCenario("CN001 - 2 Via de Carterinha - Bradesco Pós-Vendas");
+	cabecalho.setNomeCasoTeste("CT002 - Enviar formulario - Fale Conosco");
+	cabecalho.setNomeCenario("CN011 - Area logado - Fale Conosco");
 	cabecalho.setNomeEmpresa("OdontoPrev");
 	cabecalho.setNomeProjeto("RN395 - Protocolo de atendimento");
 	cabecalho.setNomeSistema("Bradesco");
-	int numStep = 1;
-	String pathDataTable = "./DataTable//CN001 - 2 Via de Carterinha - Bradesco Pós-Vendas//CT001 - Executar solicitação de 2 via de carterinha.xls";
+	int numStep = 1;		
+	String pathDataTable = "./DataTable//CN011 - Area logado - Fale Conosco//CT002 - Enviar formulario - Fale Conosco - Bradesco.xls";
 	System.out.println("Inicou o Teste: " +  cabecalho.getNomeCasoTeste());
 	
 	//-----------------------------------------SCRIPT TEST----------------------------------------------		
 	try{
 		//Inicialização dos dados do data table
-		String[] dados = utils.GetDataTable(pathDataTable, 3);
+		String[] dados = utils.GetDataTable(pathDataTable, 7); 
 				
 		/* Step 1
 		 * 
@@ -68,6 +61,7 @@ public class CN001_2ViaDeCarterinha extends PageLogin implements ISeleniumUtils 
 		try{
 			driver.get(dados[0]);
 	  		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	  		  			
 	  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("login"))){
 	  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
 	  		}else{
@@ -79,7 +73,7 @@ public class CN001_2ViaDeCarterinha extends PageLogin implements ISeleniumUtils 
 			System.out.println("Exception: " + e);
   			Assert.fail();
 		}
-  		numStep++;
+  		numStep++;	
   		/* Step 2
 		 * 
 		 * #AÇÃO: 
@@ -117,21 +111,24 @@ public class CN001_2ViaDeCarterinha extends PageLogin implements ISeleniumUtils 
 		 * 
 		 * #AÇÃO: 
 		 * 
-		 * 		No menu 'AutoAtendimento' clicar no link 'Carterinha' 
+		 * 		No menu clicar no link 'Fale Conosco'.
 		 * 
 		 * #RESULTADO ESPERADO:
 		 * 
-		 *  	Será apresentado uma tabela com as colunas
-		 *  
-		 *  	'Nome' 'Titular' 'Empresa' 'Operações'
+		 *  	 Será apresentado um formularios com os campos;
+		 *  	'Email:'
+		 *  	'Telefone:'
+		 *  	'Assunto:'
+		 *  	'Mensagem:'
+		 *  	e um botão 'Enviar'
 		 * 
 		 * #SCRIPT
 		 */
   		try{
-  			pageMenuPrincipal.executaSolicitacaoSegViaCarterinha();
+  			pageMenuPrincipal.executeClickFaleConosco();
   	  		
   	  		//Valida se o campo foi apresentado - 'Associado*:'
-  	  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("dependente"))){
+  	  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.id("enviar"))){
   	  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
   	  		}else{
   	  			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
@@ -147,19 +144,26 @@ public class CN001_2ViaDeCarterinha extends PageLogin implements ISeleniumUtils 
 		 * 
 		 * #AÇÃO: 
 		 * 
-		 * 		Click no link '- Solicitar Segunda via Carterinha -' 
+		 * 		 Preencher os campos;
+		 * 		'Email:'
+		 * 		'Telefone:'
+		 * 		'Assunto:'
+		 * 		'Mensagem:'
+		 * 		e clicar no botão 'Enviar'
 		 * 
 		 * #RESULTADO ESPERAD0:
 		 * 
-		 *  	Será apresentado o numero do protocolo no menu principal
-		 *  	da aplicação abaixo do usuário
-		 * 
+		 *  	Será apresentado uma mensagem abaixo do campo 'Mensagem:' e do botão 'Enviar'
+		 *  	'Sua demanda foi enviado com sucesso, caso seja uma solicitação assistencial, 
+		 *  	aguarde o número do protocolo por e-mail.'
+	 	 *
 		 * #SCRIPT
 		 */
   		try{
-  			pageAutoAtendimento.digitaCampoNumeroClicaBotaoEnviarConfirmaAlertJavaScript("10");
-  	  		
-  	  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.id("idNrProtocolo"))==true){
+  			pagefaleconosco.executaEnvioFormularioFaleConosco(dados[3], dados[4], dados[5], dados[6]);	
+		  		
+  	  		if(utils.AguardaTextWebElement(driver, "Sua demanda foi enviado com sucesso, caso seja uma solicitação assistencial, aguarde o número do protocolo por e-mail.", 
+  	  				30, driver.findElement(By.cssSelector("td[class='textopreto10'][height='20']")))){
   	  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
   	  		}else{
   	  			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
@@ -170,6 +174,8 @@ public class CN001_2ViaDeCarterinha extends PageLogin implements ISeleniumUtils 
 			System.out.println("Exception: " + e);
   			Assert.fail();
   		}
+  		
+  		
   		
 	}catch(Exception e){
 		
@@ -182,8 +188,6 @@ public class CN001_2ViaDeCarterinha extends PageLogin implements ISeleniumUtils 
 		document.close();
 		System.out.println("Total de passos: " + numStep);
 		System.out.println("Finalizou o Teste: " +  cabecalho.getNomeCasoTeste());
-	}
-  		
+	}	
   }
-		
 }

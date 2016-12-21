@@ -1,14 +1,9 @@
 package br.com.bradesco.test;
 
-import java.util.Iterator;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import br.com.bradesco.framework.CabecalhoEvidencia;
 import br.com.bradesco.framework.Util;
 import br.com.bradesco.interfaces.ISeleniumUtils;

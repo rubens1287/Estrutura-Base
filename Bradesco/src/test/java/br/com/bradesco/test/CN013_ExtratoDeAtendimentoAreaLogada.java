@@ -1,21 +1,15 @@
 package br.com.bradesco.test;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import br.com.bradesco.framework.CabecalhoEvidencia;
 import br.com.bradesco.framework.Util;
 import br.com.bradesco.interfaces.ISeleniumUtils;
-import br.com.bradesco.page.PageAutoAtendimento;
 import br.com.bradesco.page.PageCanaisDeAtendimento;
 import br.com.bradesco.page.PageLogin;
 import br.com.bradesco.page.PageMenuPrincipal;
-
 import com.itextpdf.text.Document;
 
 public class CN013_ExtratoDeAtendimentoAreaLogada extends PageLogin implements ISeleniumUtils {

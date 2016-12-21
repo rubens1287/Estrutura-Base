@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="49,634">
+           time="41,562">
   <properties />
   
   
-            <testcase name="CT001_ExecutarConsultaDeProtocolo" time="49,634" classname="br.com.bradesco.test.CN013_ExtratoDeAtendimentoAreaLogada" />
+            <testcase name="CT001_ExecutarConsultaDeProtocolo" time="41,562" classname="br.com.bradesco.test.CN013_ExtratoDeAtendimentoAreaLogada" />
       
 </testsuite>
