@@ -215,8 +215,8 @@ public class CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento extend
 		 * #SCRIPT
 		 */
   		try{
-  			pageAutoAtendimento.executeClickBotaoImprimirCarterinha();
-  	  		
+  			pageAutoAtendimento.executeClickBotaoImprimirCarterinha();		
+  			
   	  		String numeroProtocolo2 = new String(driver.findElement(By.id("idNrProtocolo")).getText());	
   	  		
   	  		//Valida se o campo foi apresentado - 'Associado*:'
@@ -231,7 +231,6 @@ public class CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento extend
 			System.out.println("Exception: " + e);
   			Assert.fail();
   		}
-  		numStep++;
   		
 	}catch(Exception e){
 		
