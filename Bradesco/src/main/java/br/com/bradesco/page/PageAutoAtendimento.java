@@ -13,7 +13,7 @@ public class PageAutoAtendimento implements ISeleniumUtils{
 
 	By inputBoxNumero = By.name("numero");
 	By btnEnviar = By.name("button");
-	By btnImprimirCarterinha = By.cssSelector("input[class='inputbotao']");								
+	By btnImprimirCarterinha = By.cssSelector("input[class=inputbotao][value^='IMPRIMIR']");								
 	By btnFechaJanelaImprimir = By.xpath("//*[@id='print-header']/div/button[2]");
 	By btnEnviarPorEmail = By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[3]/table[4]/tbody/tr[2]/td/center/button[2]");
 	//Janela dois
@@ -41,7 +41,7 @@ public class PageAutoAtendimento implements ISeleniumUtils{
 	}
 	
 	private void clickBtnImprimirCarterinha(){
-		driver.findElement(By.xpath("btnImprimirCarterinha")).sendKeys(Keys.ENTER);	
+		driver.findElement(btnImprimirCarterinha).click();
 				
 	}
 	

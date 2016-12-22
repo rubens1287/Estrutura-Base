@@ -4,16 +4,16 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="71,548">
+           time="68,716">
   <properties />
-            <testcase name="CT002_SolicitarExtratoPagamentoViaEmail" time="71,548" classname="br.com.bradesco.test.CN006_ExtratoDePagamento">
+            <testcase name="CT002_SolicitarExtratoPagamentoViaEmail" time="68,716" classname="br.com.bradesco.test.CN006_ExtratoDePagamento">
                 <failure type="java.lang.AssertionError"
                   message="null"
               >
 <![CDATA[java.lang.AssertionError: null
   org.testng.Assert.fail(Assert.java:94)
   org.testng.Assert.fail(Assert.java:101)
-  br.com.bradesco.test.CN006_ExtratoDePagamento.CT002_SolicitarExtratoPagamentoViaEmail(CN006_ExtratoDePagamento.java:204)
+  br.com.bradesco.test.CN006_ExtratoDePagamento.CT002_SolicitarExtratoPagamentoViaEmail(CN006_ExtratoDePagamento.java:199)
   sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

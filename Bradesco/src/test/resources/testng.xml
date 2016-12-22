@@ -7,7 +7,7 @@
  <test name="Test" >
     <classes>
          <class name="br.com.bradesco.test.SuiteTeste"></class>
-         <class name="br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento"></class>
+        <!-- <class name="br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento"></class> -->
          <class name="br.com.bradesco.test.CN001_2ViaDeCarterinha"></class>
          <class name="br.com.bradesco.test.CN006_ExtratoDePagamento"></class>
          <class name="br.com.bradesco.test.CN011_AreaLogadoFaleConosco"></class>

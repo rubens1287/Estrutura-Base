@@ -1,22 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 253.862 sec <<< FAILURE!
-CT001_ExecutarSolicitacao2viaDeCarterinha(br.com.bradesco.test.CN001_2ViaDeCarterinha)  Time elapsed: 68.146 sec  <<< FAILURE!
+Tests run: 7, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 352.415 sec <<< FAILURE!
+CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario(br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento)  Time elapsed: 95.711 sec  <<< FAILURE!
 java.lang.AssertionError: null
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.fail(Assert.java:101)
-	at br.com.bradesco.test.CN001_2ViaDeCarterinha.CT001_ExecutarSolicitacao2viaDeCarterinha(CN001_2ViaDeCarterinha.java:165)
+	at br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento.CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario(CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento.java:232)
 
-CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario(br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento)  Time elapsed: 56.524 sec  <<< FAILURE!
+CT002_SolicitarExtratoPagamentoViaEmail(br.com.bradesco.test.CN006_ExtratoDePagamento)  Time elapsed: 68.729 sec  <<< FAILURE!
 java.lang.AssertionError: null
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.fail(Assert.java:101)
-	at br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento.CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario(CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento.java:164)
-
-CT002_SolicitarExtratoPagamentoViaEmail(br.com.bradesco.test.CN006_ExtratoDePagamento)  Time elapsed: 71.549 sec  <<< FAILURE!
-java.lang.AssertionError: null
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.fail(Assert.java:101)
-	at br.com.bradesco.test.CN006_ExtratoDePagamento.CT002_SolicitarExtratoPagamentoViaEmail(CN006_ExtratoDePagamento.java:204)
+	at br.com.bradesco.test.CN006_ExtratoDePagamento.CT002_SolicitarExtratoPagamentoViaEmail(CN006_ExtratoDePagamento.java:199)
 

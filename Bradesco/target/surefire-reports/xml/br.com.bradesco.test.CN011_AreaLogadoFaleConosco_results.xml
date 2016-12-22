@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="32,577">
+           time="41,739">
   <properties />
   
   
-            <testcase name="CT001_ExecutarSolicitacao2viaDeCarterinha" time="32,577" classname="br.com.bradesco.test.CN001_2ViaDeCarterinha" />
+            <testcase name="CT002_EnviarFormulario_FaleConosco" time="41,739" classname="br.com.bradesco.test.CN011_AreaLogadoFaleConosco" />
       
 </testsuite>

@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="br.com.bradesco.test.CN012_AlterarLinksDuvidasAreaLogada">
+      <class name="br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento">
         <methods>
-          <include name="CN012_AlterarLinksDuvidasAreaLogada"/>
-          <include name="CT022_ValidarAlteraçãoLinkDuvidasSobreAlteraçãoEmail"/>
+          <include name="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario"/>
         </methods>
-      </class> <!-- br.com.bradesco.test.CN012_AlterarLinksDuvidasAreaLogada -->
+      </class> <!-- br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

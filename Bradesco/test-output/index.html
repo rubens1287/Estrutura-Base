@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Automacao\AppData\Local\Temp\testng-eclipse--1493776357\testng-customsuite.xml</span>
+                    <span>C:\Users\Automacao\AppData\Local\Temp\testng-eclipse-886790611\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,26 +90,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content passed suite-Default_suite">
+                    <div class="method-list-content failed suite-Default_suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="br.com.bradesco.test.CN012_AlterarLinksDuvidasAreaLogada" hash-for-method="CN012_AlterarLinksDuvidasAreaLogada">CN012_AlterarLinksDuvidasAreaLogada</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento" hash-for-method="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario">CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="br.com.bradesco.test.CN012_AlterarLinksDuvidasAreaLogada" hash-for-method="CT022_ValidarAlteraçãoLinkDuvidasSobreAlteraçãoEmail">CT022_ValidarAlteraçãoLinkDuvidasSobreAlteraçãoEmail</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-Default_suite -->
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -121,32 +116,55 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">br.com.bradesco.test.CN012_AlterarLinksDuvidasAreaLogada</span>
+              <img src="failed.png"/>
+              <span class="class-name">br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="CN012_AlterarLinksDuvidasAreaLogada">
-                  </a> <!-- CN012_AlterarLinksDuvidasAreaLogada -->
-                  <span class="method-name">CN012_AlterarLinksDuvidasAreaLogada</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="CT022_ValidarAlteraçãoLinkDuvidasSobreAlteraçãoEmail">
-                  </a> <!-- CT022_ValidarAlteraçãoLinkDuvidasSobreAlteraçãoEmail -->
-                  <span class="method-name">CT022_ValidarAlteraçãoLinkDuvidasSobreAlteraçãoEmail</span>
+                  <a name="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario">
+                  </a> <!-- CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario -->
+                  <span class="method-name">CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario</span>
+                  <div class="stack-trace">java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.fail(Assert.java:101)
+	at br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento.CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario(CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento.java:232)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:659)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:845)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1153)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1199)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1124)
+	at org.testng.TestNG.run(TestNG.java:1032)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-passed -->
+          </div> <!-- suite-Default_suite-class-failed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Automacao\AppData\Local\Temp\testng-eclipse--1493776357\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Automacao\AppData\Local\Temp\testng-eclipse-886790611\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -155,7 +173,7 @@
 &lt;suite name=&quot;Default suite&quot;&gt;
   &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;br.com.bradesco.test.CN012_AlterarLinksDuvidasAreaLogada&quot;/&gt;
+      &lt;class name=&quot;br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -195,15 +213,11 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'CN012_AlterarLinksDuvidasAreaLogada')
-data.setCell(0, 2, 'br.com.bradesco.test.CN012_AlterarLinksDuvidasAreaLogada')
-data.setCell(0, 3, 52972);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'CT022_ValidarAlteraçãoLinkDuvidasSobreAlteraçãoEmail')
-data.setCell(1, 2, 'br.com.bradesco.test.CN012_AlterarLinksDuvidasAreaLogada')
-data.setCell(1, 3, 44643);
+data.setCell(0, 1, 'CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario')
+data.setCell(0, 2, 'br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento')
+data.setCell(0, 3, 97317);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -234,14 +248,12 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">br.com.bradesco.test.CN012_AlterarLinksDuvidasAreaLogada</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">CN012_AlterarLinksDuvidasAreaLogada</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">CT022_ValidarAlteraçãoLinkDuvidasSobreAlteraçãoEmail</span>
-                <span class="method-start">52974 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

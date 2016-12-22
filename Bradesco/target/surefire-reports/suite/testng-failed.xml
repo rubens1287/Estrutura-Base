@@ -7,21 +7,16 @@
   </listeners>
   <test name="Test(failed)">
     <classes>
-      <class name="br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento">
-        <methods>
-          <include name="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario"/>
-        </methods>
-      </class> <!-- br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento -->
-      <class name="br.com.bradesco.test.CN001_2ViaDeCarterinha">
-        <methods>
-          <include name="CT001_ExecutarSolicitacao2viaDeCarterinha"/>
-        </methods>
-      </class> <!-- br.com.bradesco.test.CN001_2ViaDeCarterinha -->
       <class name="br.com.bradesco.test.CN006_ExtratoDePagamento">
         <methods>
           <include name="CT002_SolicitarExtratoPagamentoViaEmail"/>
         </methods>
       </class> <!-- br.com.bradesco.test.CN006_ExtratoDePagamento -->
+      <class name="br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento">
+        <methods>
+          <include name="CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario"/>
+        </methods>
+      </class> <!-- br.com.bradesco.test.CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento -->
       <class name="br.com.bradesco.test.SuiteTeste">
         <methods>
           <include name="setUp"/>

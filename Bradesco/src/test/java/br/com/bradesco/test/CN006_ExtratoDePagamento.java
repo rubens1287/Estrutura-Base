@@ -34,6 +34,7 @@ public class CN006_ExtratoDePagamento extends PageLogin implements ISeleniumUtil
 	cabecalho.setNomeProjeto("RN395 - Protocolo de atendimento");
 	cabecalho.setNomeSistema("Bradesco");
 	int numStep = 1;
+	String atualWindowId = null;
 	String pathDataTable = "./DataTable//CN006 - Extrato de Pagamento//CT002 - Solicitar extrato de pagamento via email.xls";
 	System.out.println("Inicou o Teste: " +  cabecalho.getNomeCasoTeste());
 	
@@ -152,7 +153,7 @@ public class CN006_ExtratoDePagamento extends PageLogin implements ISeleniumUtil
   		
   		try{
   			// janela atual do navegador
-  	  		String atualWindowId = driver.getWindowHandle();
+  	  		atualWindowId = driver.getWindowHandle();
   	  		pageAutoAtendimento.executeClickBtnEviarPorEmail();
   	  		utils.alteraJanelaWindows(driver, atualWindowId); 		
 	  	  	if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("email"))){
@@ -185,7 +186,7 @@ public class CN006_ExtratoDePagamento extends PageLogin implements ISeleniumUtil
   		try{
   			pageAutoAtendimento.executeEnvioDeEmailNaJanelaDois(dados[3]);
   			
-  			if(utils.AguardaTextWebElement(driver, "Email Enviado com sucesso!", 30, driver.findElement(By.xpath("/html/body/table/tbody/tr[5]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td")))){
+  			if(utils.AguardaTextWebElement(driver, "Email Enviado com sucesso!", 30, driver.findElement(By.cssSelector("td[class='portaltexto11'][align='center']")))){
 				utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
 			}else{
 				utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
@@ -193,6 +194,17 @@ public class CN006_ExtratoDePagamento extends PageLogin implements ISeleniumUtil
 			}
   			
   			//falta  validar a apresentação doo protocolo
+  			atualWindowId = driver.getWindowHandle(); 
+  			driver.close();
+  			utils.alteraJanelaWindows(driver, atualWindowId);
+  			
+  			if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.id("idNrProtocolo"))){
+  	  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
+  	  		}else{
+  	  			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
+  	  			Assert.fail();
+  	  		}
+  			
   		}catch(Exception e){
   			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
   			System.out.println("Exception :" + e);
