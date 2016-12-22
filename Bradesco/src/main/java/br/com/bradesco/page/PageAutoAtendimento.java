@@ -17,13 +17,13 @@ import br.com.bradesco.interfaces.ISeleniumUtils;
 
 public class PageAutoAtendimento implements ISeleniumUtils{
 
-	By inputBoxNumero = By.name("numero");
-	By btnEnviar = By.name("button");
-	By btnImprimirCarterinha = By.cssSelector("td[class='portal_titulo']");								
-	By btnEnviarPorEmail = By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[3]/table[4]/tbody/tr[2]/td/center/button[2]");
+	By inputBoxNumero 			= By.name("numero");
+	By btnEnviar 				= By.name("button");
+	By btnImprimirCarterinha 	= By.cssSelector("td[class='portal_titulo']");								
+	By btnEnviarPorEmail 		= By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[3]/table[4]/tbody/tr[2]/td/center/button[2]");
 	//Janela dois
-	By btnEnviarEmail = By.xpath("/html/body/table[2]/tbody/tr[5]/td/table/tbody/tr/td[2]/form/input[3]");
-	By inputBoxEmail = By.name("email");
+	By btnEnviarEmail 			= By.xpath("/html/body/table[2]/tbody/tr[5]/td/table/tbody/tr/td[2]/form/input[3]");
+	By inputBoxEmail 			= By.name("email");
 	
 	Util utils = new Util();
 	
@@ -52,11 +52,11 @@ public class PageAutoAtendimento implements ISeleniumUtils{
 			robot.keyPress(KeyEvent.VK_TAB);
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyPress(KeyEvent.VK_ENTER);
+			Thread.sleep(2000);
 			
 		} catch (Exception e) {
 			System.out.println("Erro metodo 'clickBtnImprimirCarterinha' : " + e);
 		}
-		
 	}
 		
 	private void clickBtnEnviarPorEmail(){

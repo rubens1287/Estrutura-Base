@@ -7,13 +7,17 @@ import br.com.bradesco.interfaces.ISeleniumUtils;
 
 public class PageMenuPrincipal implements ISeleniumUtils {
 
-	By lnkCarterinha = By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[8]/td/a");	
+	By lnkCarterinha 				= By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[8]/td/a");	
 	By lnkSolicitarSegViaCarterinha = By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[3]/table[3]/tbody/tr[4]/td/b/i/a");
-	By lnkExtratoAtendimento = By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[10]/td/a");
-	By LnkExtratoDePagamento = By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[7]/td/a");
-	By LnkFaleConosco = By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[11]/td/a");
-	By LnkBradescoDentaMail = By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td");
-	By LnkAvisoAbertura = By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[3]/td/span/table/tbody/tr[2]/td/a");
+	By lnkExtratoAtendimento 		= By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[10]/td/a");
+	By lnkExtratoDePagamento 		= By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[7]/td/a");
+	By lnkFaleConosco 				= By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[11]/td/a");
+	By lnkBradescoDentaMail 		= By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td");
+	By lnkAvisoAbertura 			= By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[3]/td/span/table/tbody/tr[2]/td/a");
+	By lnkInformativoIR 			= By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[4]/td/table/tbody/tr/td/a");
+	By lnkExtratoDeReembolso 		= By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[4]/td/span/table/tbody/tr[1]/td/a");
+	By lnkProtuarioVirtual			= By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/a");
+	By lnkExtratoUtilizacaoServico  = By.xpath("/html/body/table[2]/tbody/tr/td/table[3]/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[2]/td/span/table/tbody/tr[1]/td/a");
 	
 	Util utils = new Util();
 	
@@ -26,7 +30,7 @@ public class PageMenuPrincipal implements ISeleniumUtils {
 	}
 	
 	private void clickLnkExtratoDePagamento(){
-		driver.findElement(LnkExtratoDePagamento).click();
+		driver.findElement(lnkExtratoDePagamento).click();
 	}
 	
 	public void clickLnkExtratoAtendimento() {
@@ -34,19 +38,55 @@ public class PageMenuPrincipal implements ISeleniumUtils {
 	}
 	
 	private void clickLnkFaleConosco(){
-		driver.findElement(LnkFaleConosco).click();
+		driver.findElement(lnkFaleConosco).click();
 	}
 	
 	private void clickLnkBradescoDentaMail(){
-		driver.findElement(LnkBradescoDentaMail).click();
+		driver.findElement(lnkBradescoDentaMail).click();
 	}
 	
 	private void clickLnkAvisoAbertura(){
-		driver.findElement(LnkAvisoAbertura).click();
+		driver.findElement(lnkAvisoAbertura).click();
 	}
 		
 	public void executaClickLnkCarterinha(){
 		this.clickLnkCarterinha();
+	}
+	
+	private void clickLnkInformativoIR(){
+		driver.findElement(lnkInformativoIR).click();
+	}
+	
+	private void clickLnkExtratoDeReembolso(){
+		driver.findElement(lnkExtratoDeReembolso).click();
+	}
+	
+	private void clickLnkProtuarioVirtual(){
+		driver.findElement(lnkProtuarioVirtual).click();
+	}
+	
+	private void clickLnkExtratoUtilizacaoServico(){
+		driver.findElement(lnkExtratoUtilizacaoServico).click();
+	}
+	
+	public void executeClickExtratoUtilizacaoServico(){
+		try{
+			this.clickLnkProtuarioVirtual();
+			Thread.sleep(1000);
+			this.clickLnkExtratoUtilizacaoServico();
+		}catch(Exception e){
+			System.out.println("Erro ao rodar o metodo 'executeClickExtratoDeReembolso' : " + e);
+		}
+	}
+	
+	public void executeClickExtratoDeReembolso(){
+		try{
+			this.clickLnkInformativoIR();
+			Thread.sleep(1000);
+			this.clickLnkExtratoDeReembolso();
+		}catch(Exception e){
+			System.out.println("Erro ao rodar o metodo 'executeClickExtratoDeReembolso' : " + e);
+		}
 	}
 	
 	public void executaSolicitacaoSegViaCarterinha(){
@@ -74,8 +114,10 @@ public class PageMenuPrincipal implements ISeleniumUtils {
 	}
 	
 	public void executaclickLnkAvisoAbertura(){
-		driver.findElement(LnkAvisoAbertura).click();
+		driver.findElement(lnkAvisoAbertura).click();
 	}
+	
+	
 	
 	
 }
