@@ -3,6 +3,12 @@ package br.com.bradesco.interfaces;
 import org.openqa.selenium.WebDriver;
 import br.com.bradesco.framework.SeleniumUtils;
 
+/**
+ * Interface com Selenium
+ * 
+ * @author Rubens Lobo
+ *
+ */
 
 public interface ISeleniumUtils {
 		

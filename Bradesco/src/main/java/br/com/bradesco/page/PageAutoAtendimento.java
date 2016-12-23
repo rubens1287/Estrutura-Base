@@ -45,14 +45,29 @@ public class PageAutoAtendimento implements ISeleniumUtils{
 		
 	}
 	
+	@SuppressWarnings("unused")
 	private void clickBtnImprimirCarterinha() {
 		try {
+			int navegador = browserNumber;
 			Robot robot = new Robot();
-			driver.findElement(btnImprimirCarterinha).click();
-			robot.keyPress(KeyEvent.VK_TAB);
-			robot.keyPress(KeyEvent.VK_ENTER);
-			robot.keyPress(KeyEvent.VK_ENTER);
-			Thread.sleep(2000);
+			//Chrome - IE
+			if(navegador==2){
+				driver.findElement(btnImprimirCarterinha).click();
+				robot.keyPress(KeyEvent.VK_TAB);
+				robot.keyPress(KeyEvent.VK_ENTER);
+				robot.keyPress(KeyEvent.VK_ENTER);
+				Thread.sleep(2000);
+			//FireFox
+			}else if(navegador==3 || navegador==3){
+				driver.findElement(btnImprimirCarterinha).click();
+				robot.keyPress(KeyEvent.VK_TAB);
+				robot.keyPress(KeyEvent.VK_TAB);
+				robot.keyPress(KeyEvent.VK_ENTER);
+				robot.keyPress(KeyEvent.VK_ENTER);
+				Thread.sleep(3000);
+				robot.keyPress(KeyEvent.VK_ENTER);
+			}
+			
 			
 		} catch (Exception e) {
 			System.out.println("Erro metodo 'clickBtnImprimirCarterinha' : " + e);

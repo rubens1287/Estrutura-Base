@@ -1,3 +1,25 @@
+/**
+ * 	Autor: Rubens Lobo
+ * 
+ *  Data de Criação: 23/12/2016
+ * 
+ * 
+ * 	4.1 RF006 – Extrato de Pagamento – OdontoPrev/Bradesco/BBDental
+ * 
+ *  Ao digitar o login e senha (Tela01) e entrar na área logada no menu de autoatendimento opção 
+ *  [Extrato de Pagamento] (Tela02) o beneficiário será direcionado para extrato de pagamento 
+ *  (Tela03) e ao clicar no botão <Enviar por email>  (Tela03) irá digitar o email (Tela04) e clicar no botão <Enviar>.
+ *  
+ *  Ao Clicar no botão <Enviar> e ao receber a confirmação (Tela05) deverá seguir o item 
+ *  [4.1Serviço Geração de Ocorrência com Protocolo de Atendimento] para gerar o protocolo de atendimento.
+ *  
+ *  Ao Clicar no botão <Imprimir> (Tela03) deverá seguir o item 
+ *  [4.1Serviço Geração de Ocorrência com Protocolo de Atendimento] para gerar o protocolo de atendimento e mostrar na tela.
+ *  
+ *  Observação: As telas de exemplo são do Bradesco mas a funcionalidade a ser construída deve atender os 
+ *  Portais da OdontoPrev, Bradesco e BBDental. 
+ * 
+ */
 package br.com.bradesco.test;
 
 import java.util.concurrent.TimeUnit;
@@ -15,6 +37,19 @@ import com.itextpdf.text.Document;
 
 public class CN006_ExtratoDePagamento extends PageLogin implements ISeleniumUtils {
 	
+	/**
+	 * 	Autor: Rubens Lobo
+	 * 
+	 *  Data de Criação: 23/12/2016
+	 * 
+	 *  Detalhe do teste: Objetivo do teste é validar se será aprensentado o número de protocolo 
+	 *  				  no menu principal do sistema BradescoDental.
+	 * 	
+	 * Pre Condição: Usuário e Senha do portal Bradesco.
+	 *				 Cadastro de um cliente ativo.
+	 *				 Extrato de Pagamento Disponivel
+	 *  
+	 */
 	@Test(priority = 1)
 	public void  CT002_SolicitarExtratoPagamentoViaEmail() {
 	

@@ -1,3 +1,16 @@
+/**
+ * 	Autor: Rubens Lobo
+ * 
+ *  Data de Criação: 23/12/2016
+ * 
+ * 
+ * 	4.1 RF012 – Alterar Links de Dúvidas dentro da Área Logada
+ * 
+ * Serão retirados os links de dúvidas dentro da Área logada dos Portais nos locais abaixo mencionados, 
+ * já que teremos no menu [Central de Atendimento] o [Fale Conosco]
+ * 
+ *  
+ */
 package br.com.bradesco.test;
 
 import java.util.concurrent.TimeUnit;
@@ -14,6 +27,17 @@ import com.itextpdf.text.Document;
 
 public class CN012_AlterarLinksDuvidasAreaLogada extends PageLogin implements ISeleniumUtils {
 	
+	/**
+	 * 	Autor: Rubens Lobo
+	 * 
+	 *  Data de Criação: 23/12/2016
+	 * 
+	 *  Detalhe do teste: Objetivo do teste é validar se será aprensentado a mensagem 
+	 *  				  'Dúvidas sobre envio de abertura de tratamento por e-mail ? Acesse Fale Conosco'
+	 * 	
+	 * Pre Condição: Usuário e Senha
+	 *  
+	 */
 	@Test(priority = 1)
 	public void CN019_ValidarAlteracaoLinkDuvidasSobreEnvioDeAberturaDeTratamentoPorEmail() {
 	
@@ -145,6 +169,17 @@ public class CN012_AlterarLinksDuvidasAreaLogada extends PageLogin implements IS
 	}	
   }
 	
+	/**
+	 * 	Autor: Rubens Lobo
+	 * 
+	 *  Data de Criação: 23/12/2016
+	 * 
+	 *  Detalhe do teste: Objetivo do teste é validar se será aprensentado a mensagem 
+	 *  				  'Dúvida Extrato de Rede ? Acesse Fale Conosco'
+	 * 	
+	 * Pre Condição: Usuário e Senha
+	 *  
+	 */
 	@Test(priority = 2)
 	public void  CT021_ValidarAlteraçãoDo_LinkProtuárioVirtual_DuvidaExtratoDeRede(){
 	
@@ -277,6 +312,17 @@ public class CN012_AlterarLinksDuvidasAreaLogada extends PageLogin implements IS
 	}	
   }
 	
+	/**
+	 * 	Autor: Rubens Lobo
+	 * 
+	 *  Data de Criação: 23/12/2016
+	 * 
+	 *  Detalhe do teste: Objetivo do teste é validar se será aprensentado a mensagem 
+	 *  				  'Dúvida Extrato de Reembolso ? Acesse Fale Conosco'
+	 * 	
+	 * Pre Condição: Usuário e Senha
+	 *  
+	 */
 	@Test(priority = 3)
 	public void  CT020_ValidarAlteraçãoDoLink_ImpostoDeRendaReembolsos_DuvidaExtratoReembolso(){
 	
@@ -409,6 +455,17 @@ public class CN012_AlterarLinksDuvidasAreaLogada extends PageLogin implements IS
 	}	
   }
 	
+	/**
+	 * 	Autor: Rubens Lobo
+	 * 
+	 *  Data de Criação: 23/12/2016
+	 * 
+	 *  Detalhe do teste: Objetivo do teste é validar se será aprensentado a mensagem 
+	 *  				  'Dúvidas sobre Alteração de E-mail ? Acesse Fale Conosco'
+	 * 	
+	 * Pre Condição: Usuário e Senha
+	 *  
+	 */
 	@Test(priority = 4)
 	public void CT022_ValidarAlteraçãoLinkDuvidasSobreAlteraçãoEmail(){
 	

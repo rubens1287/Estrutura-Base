@@ -1,3 +1,22 @@
+/**
+ * 	Autor: Rubens Lobo
+ * 
+ *  Data de Criação: 23/12/2016
+ * 
+ * 
+ * 	RNF001 Serviço Geração de Ocorrência com Protocolo de Atendimento
+ * 
+ * Em todos os locais dentro dos portais que necessite da geração do Protocolo de Atendimento, 
+ * será chamado o serviço de gerar protocolo ANS já desenvolvido pela equipe de Sistemas Internos para gerar o protocolo.
+ * 
+ * Caso o protocolo já tenha sido gerado para alguma outra funcionalidade, o mesmo número deve ser 
+ * utilizado para gerar as novas ocorrências.
+ * 
+ * Chamar o serviço de geração de ocorrências passando o número de protocolo retornado pelo serviço de gerar protocolo,
+ * as informações abaixo também devem ser informadas na chamada do serviço:
+ * 
+ *  
+ */
 package br.com.bradesco.test;
 
 import java.util.concurrent.TimeUnit;
@@ -20,6 +39,17 @@ import com.itextpdf.text.Document;
 
 public class CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento extends PageLogin implements ISeleniumUtils {
 	
+	/**
+	 * 	Autor: Rubens Lobo
+	 * 
+	 *  Data de Criação: 23/12/2016
+	 * 
+	 *  Detalhe do teste: Objetivo do teste é validar se o sistema aprensentará o mesmo número de protocolo para duas solicitações 
+	 * 					  diferentes com usuário logado na mesma sessão.
+	 * 	
+	 * Pre Condição: Usuário e Senha do portal Bradesco.
+	 *  
+	 */
 	@Test(priority = 1)
 	public void  CT001_ExecutarDoisServicosQueGeremProtocoloNaMesmaSessãoAbertaPorUmUsuario() {
 	
@@ -42,7 +72,7 @@ public class CNF001_GeracaoDeOcorrenciaComGeracaoDeProtocoloDeAtendimento extend
 	int numStep = 1;
 	String pathDataTable = "./DataTable//CNF001 - Geracao de ocorrencia com geracao de protocolo de Atendimento//CT001 - Executar dois serviços que gerem protocolo na mesma sessão aberta por um usuário.xls";
 	System.out.println("Inicou o Teste: " +  cabecalho.getNomeCasoTeste());
-	
+
 	//-----------------------------------------SCRIPT TEST----------------------------------------------		
 	try{
 		//Inicialização dos dados do data table

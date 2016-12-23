@@ -11,8 +11,8 @@ import br.eti.kinoshita.testlinkjavaapi.util.TestLinkAPIException;
 
 /**
  * 
- * @author AA
- *	An object of this class must be created and all parameters from ITestLinkUtils should be set.
+ * @author Rubens Lobo
+ *	
  */
 
 public class TestLinkUtils implements ITestLinkUtils{

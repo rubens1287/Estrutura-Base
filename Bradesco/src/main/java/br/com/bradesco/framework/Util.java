@@ -50,6 +50,12 @@ import java.util.function.Function;
 
 import javax.swing.text.MaskFormatter;
 
+/**
+ * Classe contendo metodos para ser utilizado para qualquer tipo de automação de teste front-end webdriver
+ * 
+ * @author Rubens Lobo
+ *
+ */
 public class Util {
 	
 	HSSFWorkbook workBook;
@@ -357,6 +363,7 @@ public class Util {
  			this.AguardaPoupAlertClicaOK(driver, 5, true);
  			File source=ts.getScreenshotAs(OutputType.FILE);
  			
+ 			this.criarDiretorio(".\\ScreensShot");
  			
  			if(path == ""){
  				String dest = ".\\ScreensShot\\" + screensName + "_"+ this.GetDate(0) + "_" + this.GetTime(0) +".png";
@@ -405,8 +412,9 @@ public class Util {
 			final Font fonteVermelha = new Font(Font.FontFamily.TIMES_ROMAN,12, Font.NORMAL, BaseColor.RED);
 			final Font negritoPequena = new Font(Font.FontFamily.HELVETICA,	10, Font.BOLD);
 			  
-		
 			if(numStep == 1){
+				
+				 this.criarDiretorio(".\\Evidencia");
 				 File diretorio = new File(".\\Evidencia\\"+oCabecalho.getNomeCenario()+"\\");
 		         diretorio.mkdir();
 				//Cria documento na pasta especificada	
@@ -528,5 +536,14 @@ public class Util {
   			}
   		}
 	}
+	
+	public void criarDiretorio(String path) {
+        try {
+            File diretorio = new File(path);
+            diretorio.mkdir();
+        } catch (Exception e) {
+            System.out.println("Erro ao criar o diretorio metodo 'criarDiretorio': " + e);
+        }
+    }
 	
 }

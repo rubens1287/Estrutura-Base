@@ -1,3 +1,30 @@
+/**
+ * 	Autor: Rubens Lobo
+ * 
+ *  Data de Criação: 23/12/2016
+ * 
+ * 
+ * 	4.1 RF011 – Área Logada – Fale Conosco dos Portais
+ * 
+ * Na área logada o [Fale Conosco] ao clicar abrirá o formulário com os campos para preenchimento 
+ * (Tela01). O processo de envio (Tela02) desse formulário para o e-mail do Disque terá algumas particularidades descritas abaixo:
+ * 
+ * 1)      Os Portais a serem ajustados são os que constam na Premissa;
+ * 2)      Esse formulário será enviado para o Disque em forma de e-mail;
+ * 3)      Deverá enviar junto com os dados do formulário, o site, código do beneficiário e Nome, facilitando a 
+ *         identificação pelo atendente do Disque analisar e verificar se tem a necessidade de gerar o protocolo de atendimento;
+ * 4)      Layout exemplo do email a ser enviado ao Disque (os dados mudam para cada Portal:
+ * 
+ * 		Mensagem recebida pelo site: www.odontoprev.com.br
+ *      Código do beneficiário: 123456789
+ *      Nome: Fulano de Tal
+ *      email: fulanodetal@gmail.com
+ *      Telefone: (11) 988112233
+ *      Assunto: Reclamação
+ *      Mensagem:Texto referente a reclamação do beneficiário com todas as suas dúvidas 
+ * 
+ *  
+ */
 package br.com.bradesco.test;
 
 import java.util.concurrent.TimeUnit;
@@ -18,6 +45,18 @@ import com.itextpdf.text.Document;
 
 public class CN011_AreaLogadoFaleConosco extends PageLogin implements ISeleniumUtils {
 	
+	/**
+	 * 	Autor: Rubens Lobo
+	 * 
+	 *  Data de Criação: 23/12/2016
+	 * 
+	 *  Detalhe do teste: Objetivo do teste é validar se será aprensentado a mensagem 
+	 *  				  'Sua demanda foi enviado com sucesso, caso seja uma solicitação assistencial, 
+	 *  				   aguarde o número do protocolo por e-mail.'
+	 * 	
+	 * Pre Condição: Usuário e Senha 
+	 *  
+	 */
 	@Test(priority = 1)
 	public void CT002_EnviarFormulario_FaleConosco() {
 	

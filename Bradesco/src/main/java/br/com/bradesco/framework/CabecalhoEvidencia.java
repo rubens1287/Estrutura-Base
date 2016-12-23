@@ -1,5 +1,10 @@
 package br.com.bradesco.framework;
-
+/**
+ * Classe de configuração do cabeçalho da evidencia
+ * 
+ * @author Rubens Lobo
+ *
+ */
 public class CabecalhoEvidencia {
 	
 	private String nomeEmpresa;

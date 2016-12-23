@@ -1,5 +1,11 @@
 package br.com.bradesco.interfaces;
 
+/**
+ * Interface com a Classe TestLinkUtils
+ * 
+ * @author Rubens Lobo
+ *
+ */
 public interface ITestLinkUtils {
 
 	public final String urlTestLink = "http://testlink.rubens.com.br/lib/api/xmlrpc/v1/xmlrpc.php";

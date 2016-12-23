@@ -4,46 +4,49 @@
  *  Data de Criação: 23/12/2016
  * 
  * 
- * 	4.1RF013 – Extrato de Atendimento na Área Logada
+ * 	4.1 RF003 – Imprimir Carteirinha Virtual
  * 
- *  Será criado (API e Serviço) para todos os portais mencionados na premissa a opção 
- *  [Extrato de Atendimento] (Tela01) que conterá os seguintes campos: 
- *  Protocolo, Data da Abertura, Assunto, Status e  Canal de Atendimento.
+ *  BradescoDental, Odontoprev e BBDental
+ *  Na área logada , no menu [Autoatendimento] opção [Carteirinha] Clicar em [Imprimir Carteirinha] 
+ *  deverá exibir o Protocolo de Atendimento e depois mostrar o PDF da carteirinha.
+ *  Ao clicar no botão <Imprimir Carteirinha> deverá seguir o item 
+ *  [4.1Serviço Geração de Ocorrência com Protocolo de Atendimento] para a geração do protocolo de atendimento.
+ * 
  *  
- *  Ao selecionar o período e clicar no botão <Buscar> irá mostrar os protocolos do período em ordem decrescente de Data.
- * 
  */
 package br.com.bradesco.test;
 
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import br.com.bradesco.framework.CabecalhoEvidencia;
 import br.com.bradesco.framework.Util;
 import br.com.bradesco.interfaces.ISeleniumUtils;
-import br.com.bradesco.page.PageCanaisDeAtendimento;
+import br.com.bradesco.page.PageAutoAtendimento;
 import br.com.bradesco.page.PageLogin;
 import br.com.bradesco.page.PageMenuPrincipal;
+
 import com.itextpdf.text.Document;
 
-public class CN013_ExtratoDeAtendimentoAreaLogada extends PageLogin implements ISeleniumUtils {
-
+public class CN003_ImpressaoDeCarterinhaVirtual extends PageLogin implements ISeleniumUtils {
+	
 	/**
 	 * 	Autor: Rubens Lobo
 	 * 
 	 *  Data de Criação: 23/12/2016
 	 * 
-	 *  Detalhe do teste: Objetivo do teste é validar se será aprensentado os uma tabela com os registros dos protocolos gerados 
-	 *  				  para servir de consulta para o beneficiário no sistema Bradesco Dental.
+	 *  Detalhe do teste: Objetivo do teste é validar se será aprensentado o número de protocolo 
+	 *  				  no menu principal do sistema BradescoDental.
 	 * 	
-	 * Pre Condição: Usuário e Senha
-	 * 				 Benficiário com cadastro ativo
-	 * 				 Numero de protocolos gerado
+	 * Pre Condição: Usuário e Senha do portal Bradesco.
+	 * 				 Cadastro de um cliente ativo.
 	 *  
 	 */
 	@Test(priority = 1)
-	public void CT001_ExecutarConsultaDeProtocolo() {
+	public void CT001_ExecutarImpressaoDeCarterinha () {
 	
 	//-----------------------------------------SETUP----------------------------------------------------
 	//Estacia objetos
@@ -51,24 +54,22 @@ public class CN013_ExtratoDeAtendimentoAreaLogada extends PageLogin implements I
 	Document document = new Document();
 	CabecalhoEvidencia cabecalho = new CabecalhoEvidencia();
 	PageMenuPrincipal pageMenuPrincipal = new PageMenuPrincipal();
-	PageCanaisDeAtendimento pageCanaisDeAtendimento = new PageCanaisDeAtendimento();
-	
-	
+	PageAutoAtendimento pageAutoAtendimento = new PageAutoAtendimento();	
 	//---------------------------INICIALIZAÇÃO DO CABEÇARIO DA EVIDENCIA--------------------------------
 	//Monta cabeçalho do teste
-	cabecalho.setNomeCasoTeste("CT001 - Executar consulta de protocolo");
-	cabecalho.setNomeCenario("CN013 - Extrato de Atendimento na Área Logada");
+	cabecalho.setNomeCasoTeste("CT001 - Executar impressao de carterinha");
+	cabecalho.setNomeCenario("CN003 - Impressão de Carterinha Virtual");
 	cabecalho.setNomeEmpresa("OdontoPrev");
 	cabecalho.setNomeProjeto("RN395 - Protocolo de atendimento");
 	cabecalho.setNomeSistema("Bradesco");
-	int numStep = 1;		
-	String pathDataTable = "./DataTable//CN013 - Extrato de Atendimento na Área Logada//CT002 - Executar consulta de protocolo.xls";
+	int numStep = 1;
+	String pathDataTable = "./DataTable//CN003 - Impressão de Carterinha Virtual//CT001 - Executar impressao de carterinha.xls";
 	System.out.println("Inicou o Teste: " +  cabecalho.getNomeCasoTeste());
 	
 	//-----------------------------------------SCRIPT TEST----------------------------------------------		
 	try{
 		//Inicialização dos dados do data table
-		String[] dados = utils.GetDataTable(pathDataTable, 5); 
+		String[] dados = utils.GetDataTable(pathDataTable, 3);
 				
 		/* Step 1
 		 * 
@@ -86,7 +87,6 @@ public class CN013_ExtratoDeAtendimentoAreaLogada extends PageLogin implements I
 		try{
 			driver.get(dados[0]);
 	  		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	  		  			
 	  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.name("login"))){
 	  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
 	  		}else{
@@ -98,7 +98,7 @@ public class CN013_ExtratoDeAtendimentoAreaLogada extends PageLogin implements I
 			System.out.println("Exception: " + e);
   			Assert.fail();
 		}
-  		numStep++;	
+  		numStep++;
   		/* Step 2
 		 * 
 		 * #AÇÃO: 
@@ -136,25 +136,21 @@ public class CN013_ExtratoDeAtendimentoAreaLogada extends PageLogin implements I
 		 * 
 		 * #AÇÃO: 
 		 * 
-		 * 		No menu 'CENTRAL DE ATENDIMENTO' clicar no link 'Extrato de Atendimento'.
+		 * 		No menu 'AutoAtendimento' clicar no link 'Carterinha' 
 		 * 
 		 * #RESULTADO ESPERADO:
 		 * 
-		 *  	Será apresentado os campos:
-		 *	
-		 *      'Data Inicial:'
-	 	 *		
-	 	 *		'Data Final:'
-	 	 *
-	 	 *       e um botão 'Buscar'
+		 *  	Será apresentado uma tabela com as colunas
+		 *  
+		 *  	'Nome' 'Titular' 'Empresa' 'Operações'
 		 * 
 		 * #SCRIPT
 		 */
   		try{
-  			pageMenuPrincipal.clickLnkExtratoAtendimento();
+  			pageMenuPrincipal.executaClickLnkCarterinha();
   	  		
   	  		//Valida se o campo foi apresentado - 'Associado*:'
-  	  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.id("buscar"))){
+  	  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.cssSelector("td[class='portal_titulo']"))){
   	  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
   	  		}else{
   	  			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
@@ -170,26 +166,19 @@ public class CN013_ExtratoDeAtendimentoAreaLogada extends PageLogin implements I
 		 * 
 		 * #AÇÃO: 
 		 * 
-		 * 		Preencher os campos
-		 * 		'Data Inicial:'
-		 *		'Data Final:'
-		 *		e clicar no botão 'Buscar'
-		 * 
+		 * 		Dentro da tabela 'Carteirinha Virtual' na coluna 'Operações' clicar no botão 'Imprimir Carteirinha'.
+ 		 *	
 		 * #RESULTADO ESPERAD0:
 		 * 
-		 *  	Será apresentado uma tabela com as colunas
-	 	 *		
-	 	 *		'Protocolo' ; 'Data de Abertura' ; 'Assunto' ; 'Status' ; 'Canal de Atendimento'
-	 	 *
-	 	 *		Os registros da tabela deverá ser apresentado em
-	 	 *		ordem decrescente pelo coluna 'data'
-	 	 *
+		 *  	Será apresentado o numero do protocolo no menu principal
+		 *  	da aplicação abaixo do usuário
+		 * 
 		 * #SCRIPT
 		 */
   		try{
-  			pageCanaisDeAtendimento.ExecutaBuscaExtratoDeAtendimento(dados[3],dados[4]);  		
-		  		
-  	  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.xpath("//*[@id='idTabelaContent']/tbody/tr[1]/td[1]"))){
+  			pageAutoAtendimento.executeClickBotaoImprimirCarterinha();
+  	  		
+  	  		if(utils.AguardaAteaSuaPresencaBy(driver, 20, By.id("idNrProtocolo"))){
   	  			utils.Evidencia(document, cabecalho , driver, numStep, "Passou");
   	  		}else{
   	  			utils.Evidencia(document, cabecalho , driver, numStep, "Falhou");
@@ -201,7 +190,6 @@ public class CN013_ExtratoDeAtendimentoAreaLogada extends PageLogin implements I
   			Assert.fail();
   		}
   		
-
 	}catch(Exception e){
 		
 		System.out.println("Erro ao rodar o teste :" + cabecalho.getNomeCasoTeste()); 
@@ -216,5 +204,5 @@ public class CN013_ExtratoDeAtendimentoAreaLogada extends PageLogin implements I
 	}
   		
   }
-	
+
 }
