@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="50995" started-at="2016-12-23T16:37:05Z" finished-at="2016-12-23T16:37:56Z">
+  <suite name="Default suite" duration-ms="79382" started-at="2016-12-23T17:25:41Z" finished-at="2016-12-23T17:27:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="50995" started-at="2016-12-23T16:37:05Z" finished-at="2016-12-23T16:37:56Z">
-      <class name="br.com.bradesco.test.CN003_ImpressaoDeCarterinhaVirtual">
-        <test-method status="PASS" signature="CT001_ExecutarImpressaoDeCarterinha()[pri:0, instance:br.com.bradesco.test.CN003_ImpressaoDeCarterinhaVirtual@38082d64]" name="CT001_ExecutarImpressaoDeCarterinha" duration-ms="50936" started-at="2016-12-23T14:37:05Z" finished-at="2016-12-23T14:37:56Z">
+    <test name="Default test" duration-ms="79382" started-at="2016-12-23T17:25:41Z" finished-at="2016-12-23T17:27:00Z">
+      <class name="br.com.bradesco.test.CN006_ExtratoDePagamento">
+        <test-method status="PASS" signature="CT002_SolicitarExtratoPagamentoViaEmail()[pri:0, instance:br.com.bradesco.test.CN006_ExtratoDePagamento@38082d64]" name="CT002_SolicitarExtratoPagamentoViaEmail" duration-ms="79324" started-at="2016-12-23T15:25:41Z" finished-at="2016-12-23T15:27:00Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CT001_ExecutarImpressaoDeCarterinha -->
-      </class> <!-- br.com.bradesco.test.CN003_ImpressaoDeCarterinhaVirtual -->
+        </test-method> <!-- CT002_SolicitarExtratoPagamentoViaEmail -->
+      </class> <!-- br.com.bradesco.test.CN006_ExtratoDePagamento -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

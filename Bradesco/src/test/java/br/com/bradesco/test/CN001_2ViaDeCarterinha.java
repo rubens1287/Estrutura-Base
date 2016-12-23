@@ -4,56 +4,15 @@
  *  Data de Criação: 23/12/2016
  * 
  * 
- * 	4.1 RNF001 Serviço Geração de Ocorrência com Protocolo de Atendimento
+ * 	RF001 - 2ª Via de Carteirinha (Física) – Bradesco Pós-Venda
  * 
- * Em todos os locais dentro dos portais que necessite da geração do Protocolo de Atendimento, 
- * será chamado o serviço de gerar protocolo ANS já desenvolvido pela equipe de Sistemas Internos para gerar o protocolo.
- * o   Caso o protocolo já tenha sido gerado para alguma outra funcionalidade, o mesmo número deve ser utilizado para gerar 
- * as novas ocorrências.
- * Chamar o serviço de geração de ocorrências passando o número de protocolo retornado pelo serviço
- *  de gerar protocolo, as informações abaixo também devem ser informadas na chamada do serviço:
- *  WS-01 Serviço de geração de Ocorrência com Protocolo de atendimento
- *  CHAMADA: Na chamada do serviço deve-se passar as informações abaixo:
- *  Ø  Número da Carteirinha do beneficiário;
- *  Ø  ID da Marca do produto (Ex. Bradesco, SEPAO, Privian, Unimed entre outros);
- *  Ø  IP do requisitante;
- *  Ø  Sistema requisitante;
- *  Ø  ID tipo (ocorrência normal para tratativa e ocorrência histórica)
- *  Ø  ID Tipo de Ocorrência;
- *  Ø  ID Motivo Ocorrência;
- *  Ø  Descrição da Ocorrência;
- *  Ø  Número do Protocolo.
+ * Ao digitar o login e senha (Tela01) e entrar na área logada no menu de autoatendimento opção [Carteirinha] 
+ * (Tela02) o beneficiário será direcionado para a Carteirinha Virtual onde existe um link [Solicitar Segunda via Carteirinha] 
+ * (Tela03) que ao clicar irá direcionar para o preenchimento dos dados para envio da carteirinha física (Tela04).
+ *  O preenchimento dos dados irá atualizar o endereço de entrega do beneficiário no DCMS.
  *  
- *  FUNCIONALIDADE:
- *  
- *  Ø  Abrir uma ocorrência com os dados enviados;
- *  Ø  Gerar e gravar um log de protocolo com os dados enviados;
- *  Ø  Finalizar a ocorrência caso seja do tipo gravação de registro histórico de atendimento entregue de imediato;
- *  Ø  Vincular o número da Ocorrência com o número do protocolo de atendimento;
- *  
- *  RESPOSTA:
- *  
- *  Ø  Número do Protocolo de Atendimento e ocorrência gerada.
- *  
- *  Objetivos do serviço:
- *  
- *  Registrar/Criar uma ocorrência com o número do protocolo para todo e qualquer atendimento ao beneficiário logado.:
- *  
- *  o   Ocorrência histórica
- *  
- *  §  Situação Atual, não temos registros do serviço de autoatendimento aos beneficiários com protocolo.
- *  §  Situação Proposta, Todos os serviços de autoatendimento nos canais digitais da empresa (Portais, Mobile e URA) 
- *  disponível ao beneficiário como por exemplo: 2ª Via Carteirinha, 2ª Via de Boleto, Solicitação de Prévia de Reembolso, 
- *  Extrato de Pagamento, Alteração da Forma de Pagamento, Cancelamento de Contrato.
- *  O serviço criará uma ocorrência histórica contendo os dados do atendimento encerrando a ocorrência. A tela exibirá apenas a informação do número do protocolo ANS.
- *  O Pop-up em que aparecerá o protocolo gerado pela primeira vez, será conforme abaixo seguindo as cores do portal que está sendo implementado.
- *  o pop-up seguirá a mesma regra do protocolo só será mostrado quando o protocolo for gerado.
- *  Teremos um único protocolo para uma ou várias solicitações de serviço que necessitem protocolo, ou seja, 
- *  poderemos ter mais de uma ocorrência para o mesmo protocolo.
- *  Caso ocorra erro deverá aparecer a mensagem: “Serviço indisponível no momento tente em alguns minutos.”
- *  Em caso de indisponibilidade ou erro nos serviços de protocolo ou ocorrência não será gerado nem protocolo 
- *  nem ocorrência, ou seja, o processo não deve ser finalizado.
- *  O local onde sempre deverá mostrar o Protocolo é na parte superior abaixo do nome conforme exemplos abaixo:
+ *  Ao Clicar no botão <Enviar> (Tela05), ao receber a confirmação deverá seguir o item 
+ *  [4.1Serviço Geração de Ocorrência com Protocolo de Atendimento] para gerar o protocolo de atendimento.
  *   
  */
 package br.com.bradesco.test;
@@ -80,10 +39,11 @@ public class CN001_2ViaDeCarterinha extends PageLogin implements ISeleniumUtils 
 	 * 
 	 *  Data de Criação: 23/12/2016
 	 * 
-	 *  Detalhe do teste: Objetivo do teste é validar se o sistema aprensentará o mesmo número de 
-	 *  				  protocolo para duas solicitações diferentes com usuário logado na mesma sessão.
+	 *  Detalhe do teste: Objetivo do teste é validar se será aprensentado o 
+	 *  				  número de protocolo no menu principal do sistema BradescoDental.
 	 * 	
 	 *  Pre Condição: Usuário e Senha do portal Bradesco.
+	 *  			  Cadastro de um cliente ativo.
 	 * 				
 	 *  
 	 */
